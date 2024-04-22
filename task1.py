@@ -62,7 +62,7 @@ def update_google_sheet(row_index, image_resolution):
         return f"Error: {str(e)}"
 
 if __name__ == '__main__':
-    with ThreadPoolExecutor(max_workers=50) as executor:
+    with ThreadPoolExecutor(max_workers=5) as executor:
         resolutions = list(executor.map(get_image_resolution, links))
 
     for i, resolution in enumerate(resolutions):
